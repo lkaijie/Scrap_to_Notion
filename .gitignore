@@ -1,3 +1,11 @@
+# added
+ignore/
+config.py
+notiondb.json
+test.py
+internscraper
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
