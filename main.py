@@ -3,6 +3,10 @@ from scraper import Scraper
 import notioner as n
 
 
+# Inconsistencies that needs to be fixed:
+# Date posted
+# Inconsistent spacing, strip() the blank spaces
+
 
 ss = Scraper()
 
@@ -54,11 +58,11 @@ for item in filtered_data:
     data = {
         "Date Posted":{ "date": {"start": date_scraped}},
         "Date Scraped":{ "date": {"start": date_scraped}},
-        "URL": {"title": [{"text": {"content": url}}]},
+        "URL": {"url": url},
         "Platform": {"rich_text": [{"text": {"content": platform}}]},
         "Company": {"rich_text": [{"text": {"content": company}}]},
         "Location": {"rich_text": [{"text": {"content": location}}]},
-        "Title": {"rich_text": [{"text": {"content": title}}]},
+        "Title": {"title": [{"text": {"content": title}}]},
     }
     # job_list.append([title, company, location, url, listing_age, "glassdoor"])
     n.create_page(data)

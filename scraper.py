@@ -31,7 +31,7 @@ class Scraper():
             except:
                 days_ago = "N/A"
             company_name = div.find("span", attrs={"class":"companyName"}).text
-            print("Location:", location)
+            # print("Location:", location)
             try:
                 a = div.find("div", attrs={"class":"attribute_snippet"})
                 salary = a.text

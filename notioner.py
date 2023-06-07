@@ -18,7 +18,7 @@ def get_pages():
     ''' Get all pages from Notion database'''
     
     
-    payload = {"page_size": 100}
+    payload = {"page_size": 200}
     res = requests.post(url, headers=headers, json=payload)
     
     data=res.json()['results']
@@ -37,8 +37,9 @@ def create_page(data: dict):
     
     res = requests.post(create_url, headers=headers, json=payload)
     print("create page:",res.status_code)
+    if res.status_code == 400:
+        print(data)
     
-    # print(res.json())
     return res.json()
 
 def update_page(page_id, data: dict):
@@ -53,7 +54,6 @@ def update_page(page_id, data: dict):
 def get_primary_keys()-> list:
     pages = get_pages()
     title_company_location = []
-    # print("pages:", pages)
     for x in pages:
         try:
             title_company_location.append([x['properties']['Title']["rich_text"][0]["text"]["content"], 
@@ -68,7 +68,7 @@ def get_primary_keys()-> list:
     
 def main():
     # get all pages
-    # get_pages()
+    get_pages()
     title_company_location = get_primary_keys()
     print("HERE IS THE LIST OF ENTRIES CHECK FOR DUPLICATES HERE:")
     print(title_company_location)
@@ -83,13 +83,14 @@ def main():
     date_posted = datetime.now(timezone.utc).astimezone().isoformat()
     date_scraped = datetime.now(timezone.utc).astimezone().isoformat() 
     data = {
-        "Date Posted":{ "date": {"start": None}},
+        "Date Posted":{ "date": {"start": date_posted}},
         "Date Scraped":{ "date": {"start": date_scraped}},
-        "URL": {"title": [{"text": {"content": url}}]},
+        # "URL": {"title": [{"text": {"content": url}}]},
+        "URL": {"url": url},
         "Platform": {"rich_text": [{"text": {"content": platform}}]},
         "Company": {"rich_text": [{"text": {"content": company}}]},
         "Location": {"rich_text": [{"text": {"content": location}}]},
-        "Title": {"rich_text": [{"text": {"content": title}}]},
+        "Title": {"title": [{"text": {"content": title}}]},
     }
 
     create_page(data)

@@ -1,0 +1,290 @@
+[
+    {
+        "object": "page",
+        "id": "26fbce19-856c-4449-8602-e055a29b4aac",
+        "created_time": "2023-06-07T22:01:00.000Z",
+        "last_edited_time": "2023-06-07T22:01:00.000Z",
+        "created_by": {
+            "object": "user",
+            "id": "b376d3ac-03aa-4951-a40c-fd28e5cd5682"
+        },
+        "last_edited_by": {
+            "object": "user",
+            "id": "b376d3ac-03aa-4951-a40c-fd28e5cd5682"
+        },
+        "cover": null,
+        "icon": null,
+        "parent": {
+            "type": "database_id",
+            "database_id": "ae7289b7-4916-4361-b40c-668e822d6ee0"
+        },
+        "archived": false,
+        "properties": {
+            "Date Posted": {
+                "id": "EteM",
+                "type": "date",
+                "date": {
+                    "start": "2023-06-07T16:01:00.000-06:00",
+                    "end": null,
+                    "time_zone": null
+                }
+            },
+            "Location": {
+                "id": "L%3CSR",
+                "type": "rich_text",
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Remote",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Remote",
+                        "href": null
+                    }
+                ]
+            },
+            "Date Scraped": {
+                "id": "Nppf",
+                "type": "date",
+                "date": {
+                    "start": "2023-06-07T16:01:00.000-06:00",
+                    "end": null,
+                    "time_zone": null
+                }
+            },
+            "Applied": {
+                "id": "SVFb",
+                "type": "checkbox",
+                "checkbox": false
+            },
+            "Company": {
+                "id": "WY%5CD",
+                "type": "rich_text",
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Indeed",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Indeed",
+                        "href": null
+                    }
+                ]
+            },
+            "Platform": {
+                "id": "gHNT",
+                "type": "rich_text",
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Indeed",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Indeed",
+                        "href": null
+                    }
+                ]
+            },
+            "URL": {
+                "id": "%7C%3CRw",
+                "type": "url",
+                "url": "https://www.indeed.com/viewjob?jk=8b5b5b5b5b5b5b5b"
+            },
+            "Title": {
+                "id": "title",
+                "type": "title",
+                "title": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Software Engineer",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Software Engineer",
+                        "href": null
+                    }
+                ]
+            }
+        },
+        "url": "https://www.notion.so/Software-Engineer-26fbce19856c44498602e055a29b4aac"
+    },
+    {
+        "object": "page",
+        "id": "3d0b119d-5d1d-4e4a-a61a-374dfd428297",
+        "created_time": "2023-06-07T21:59:00.000Z",
+        "last_edited_time": "2023-06-07T21:59:00.000Z",
+        "created_by": {
+            "object": "user",
+            "id": "df5790f8-6e9b-4778-b31e-ef29a883c674"
+        },
+        "last_edited_by": {
+            "object": "user",
+            "id": "df5790f8-6e9b-4778-b31e-ef29a883c674"
+        },
+        "cover": null,
+        "icon": null,
+        "parent": {
+            "type": "database_id",
+            "database_id": "ae7289b7-4916-4361-b40c-668e822d6ee0"
+        },
+        "archived": false,
+        "properties": {
+            "Date Posted": {
+                "id": "EteM",
+                "type": "date",
+                "date": {
+                    "start": "2023-06-07",
+                    "end": null,
+                    "time_zone": null
+                }
+            },
+            "Location": {
+                "id": "L%3CSR",
+                "type": "rich_text",
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Calgary",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Calgary",
+                        "href": null
+                    }
+                ]
+            },
+            "Date Scraped": {
+                "id": "Nppf",
+                "type": "date",
+                "date": {
+                    "start": "2023-05-31",
+                    "end": null,
+                    "time_zone": null
+                }
+            },
+            "Applied": {
+                "id": "SVFb",
+                "type": "checkbox",
+                "checkbox": true
+            },
+            "Company": {
+                "id": "WY%5CD",
+                "type": "rich_text",
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Google",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Google",
+                        "href": null
+                    }
+                ]
+            },
+            "Platform": {
+                "id": "gHNT",
+                "type": "rich_text",
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "indeed",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "indeed",
+                        "href": null
+                    }
+                ]
+            },
+            "URL": {
+                "id": "%7C%3CRw",
+                "type": "url",
+                "url": "https://www.learn4good.com/jobs/ottawa/canada/info_technology/2376177939/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+            },
+            "Title": {
+                "id": "title",
+                "type": "title",
+                "title": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Internship",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Internship",
+                        "href": null
+                    }
+                ]
+            }
+        },
+        "url": "https://www.notion.so/Internship-3d0b119d5d1d4e4aa61a374dfd428297"
+    }
+]
