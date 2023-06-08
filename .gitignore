@@ -1,6 +1,6 @@
 # added
 ignore/
-config.py
+# config.py
 notiondb.json
 test.py
 internscraper
