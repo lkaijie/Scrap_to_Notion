@@ -14,6 +14,11 @@ pip install -r requirements.txt
 ```
 Fill in your Notion API key and database ID in the config.py file
 ```
+# Usage
+```
+python main.py
+```
+
 
 # Data visualization
 #### coming soon...
