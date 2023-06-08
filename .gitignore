@@ -4,6 +4,7 @@ config.py
 notiondb.json
 test.py
 internscraper
+notiondb1.json
 
 
 # Byte-compiled / optimized / DLL files

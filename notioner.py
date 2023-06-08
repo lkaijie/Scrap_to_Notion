@@ -61,39 +61,37 @@ def get_primary_keys()-> list:
                                         x['properties']['Location']["rich_text"][0]["text"]["content"]
                                         ])
         except Exception as e:
-            print(e)
-            
-        # print(x['properties']['Title']["rich_text"][0]["text"]["content"])
+            print(e)            
     return title_company_location
     
 def main():
     # get all pages
     get_pages()
-    title_company_location = get_primary_keys()
-    print("HERE IS THE LIST OF ENTRIES CHECK FOR DUPLICATES HERE:")
-    print(title_company_location)
+    # title_company_location = get_primary_keys()
+    # print("HERE IS THE LIST OF ENTRIES CHECK FOR DUPLICATES HERE:")
     # print(title_company_location)
-    print("------------------")
-    # create a sample page
-    url = "https://www.indeed.com/viewjob?jk=8b5b5b5b5b5b5b5b"
-    title = "Software Engineer"
-    company = "Indeed"
-    location = "Remote"
-    platform = "Indeed"
-    date_posted = datetime.now(timezone.utc).astimezone().isoformat()
-    date_scraped = datetime.now(timezone.utc).astimezone().isoformat() 
-    data = {
-        "Date Posted":{ "date": {"start": date_posted}},
-        "Date Scraped":{ "date": {"start": date_scraped}},
-        # "URL": {"title": [{"text": {"content": url}}]},
-        "URL": {"url": url},
-        "Platform": {"rich_text": [{"text": {"content": platform}}]},
-        "Company": {"rich_text": [{"text": {"content": company}}]},
-        "Location": {"rich_text": [{"text": {"content": location}}]},
-        "Title": {"title": [{"text": {"content": title}}]},
-    }
+    # # print(title_company_location)
+    # print("------------------")
+    # # create a sample page
+    # url = "https://www.indeed.com/viewjob?jk=8b5b5b5b5b5b5b5b"
+    # title = "Software Engineer"
+    # company = "Indeed"
+    # location = "Remote"
+    # platform = "Indeed"
+    # date_posted = datetime.now(timezone.utc).astimezone().isoformat()
+    # date_scraped = datetime.now(timezone.utc).astimezone().isoformat() 
+    # data = {
+    #     "Date Posted":{ "date": {"start": date_posted}},
+    #     "Date Scraped":{ "date": {"start": date_scraped}},
+    #     # "URL": {"title": [{"text": {"content": url}}]},
+    #     "URL": {"url": url},
+    #     "Platform": {"rich_text": [{"text": {"content": platform}}]},
+    #     "Company": {"rich_text": [{"text": {"content": company}}]},
+    #     "Location": {"rich_text": [{"text": {"content": location}}]},
+    #     "Title": {"title": [{"text": {"content": title}}]},
+    # }
 
-    create_page(data)
+    # create_page(data)
     # time.sleep(5)
 
     # # update page

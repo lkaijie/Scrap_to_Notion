@@ -8,6 +8,7 @@ import notioner as n
 # Inconsistent spacing, strip() the blank spaces
 
 
+
 ss = Scraper()
 
 url = "https://www.glassdoor.com/Job/canada-software-intern-jobs-SRCH_IL.0,6_IN3_KO7,22.htm?fromAge=3"
@@ -64,6 +65,5 @@ for item in filtered_data:
         "Location": {"rich_text": [{"text": {"content": location}}]},
         "Title": {"title": [{"text": {"content": title}}]},
     }
-    # job_list.append([title, company, location, url, listing_age, "glassdoor"])
     n.create_page(data)
 
