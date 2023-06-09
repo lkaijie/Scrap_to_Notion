@@ -40,7 +40,7 @@ def create_page(data: dict):
     if res.status_code == 400:
         print(data)
     
-    return res.json()
+    return res.json(), res.status_code
 
 def update_page(page_id, data: dict):
     url = "https://api.notion.com/v1/pages/" + page_id
@@ -56,7 +56,7 @@ def get_primary_keys()-> list:
     title_company_location = []
     for x in pages:
         try:
-            title_company_location.append([x['properties']['Title']["rich_text"][0]["text"]["content"], 
+            title_company_location.append([x['properties']['Title']["title"][0]["text"]["content"], 
                                         x['properties']['Company']["rich_text"][0]["text"]["content"], 
                                         x['properties']['Location']["rich_text"][0]["text"]["content"]
                                         ])
@@ -66,10 +66,10 @@ def get_primary_keys()-> list:
     
 def main():
     # get all pages
-    get_pages()
-    # title_company_location = get_primary_keys()
+    # get_pages()
+    title_company_location = get_primary_keys()
     # print("HERE IS THE LIST OF ENTRIES CHECK FOR DUPLICATES HERE:")
-    # print(title_company_location)
+    print(title_company_location)
     # # print(title_company_location)
     # print("------------------")
     # # create a sample page

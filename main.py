@@ -28,7 +28,6 @@ jobs_indeed = ss.get_indeed(url_indeed, None)
 
 
 data = jobs_glassdoor + jobs_google + jobs_indeed
-
 unique_data = {}
 
 for item in data:
@@ -40,15 +39,20 @@ for item in data:
 unique_data = list(unique_data.values())
 
 pages = n.get_primary_keys()
-filter_keys = set(tuple(item[:3]) for item in pages)
-
-filtered_data = [item for item in unique_data if tuple(item[:3]) not in filter_keys]
-
+# print("Data(scraped):",data)
+# print("Unique data(scraped):",unique_data)
+filtered_data = []
+page_entries = [sublist[:3] for sublist in pages]
+for entry in unique_data:
+    if entry[:3] not in page_entries:
+        filtered_data.append(entry)
+# print("Pages:",pages)
+# print("Filtered data:",filtered_data)
 if len(filtered_data) == 0:
     print("No new entries")
     exit()
+created_pages = []
 for item in filtered_data:
-    # print(item)
     date_posted = item[4]
     date_scraped = datetime.now(timezone.utc).astimezone().isoformat() 
     url = item[3]
@@ -65,5 +69,11 @@ for item in filtered_data:
         "Location": {"rich_text": [{"text": {"content": location}}]},
         "Title": {"title": [{"text": {"content": title}}]},
     }
-    n.create_page(data)
-
+    page = n.create_page(data)
+    if page[1] == 200:
+        created_pages[0]+=1
+    else:
+        print("Error creating page:",page[0])
+        created_pages[1]+=1
+print("Created pages:",created_pages[0])
+print("Failed to create pages:",created_pages[1])
