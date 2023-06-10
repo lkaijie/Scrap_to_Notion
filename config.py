@@ -1,3 +1,0 @@
-notion_token = "secret_s96YdHrVxZgiqlCOJTr3nbVYQuJNeyhF5xZcgHnfM4h"
-
-database_id="ae7289b749164361b40c668e822d6ee0"
