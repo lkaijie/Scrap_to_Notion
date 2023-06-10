@@ -25,6 +25,8 @@ class Scraper():
         for div in self.soup.find_all(name="div", attrs={"class":"job_seen_beacon"}):
             title = div.find("span").text
             location = div.find("div", attrs={"class":"companyLocation"}).text
+            location = location.split(",", 1)[0]
+            location = location.strip()
             job_url = div.find("a",).get("href")
             try:
                 days_ago = div.find("span", attrs={"class":"date"}).text
@@ -60,6 +62,8 @@ class Scraper():
             title = div.find("div", attrs={"class":"BjJfJf PUpOsf"}).text
             company_name = div.find("div", attrs={"class":"vNEEBe"}).text
             location = div.find("div", attrs={"class":"Qk80Jf"}).text
+            location = location.split(",", 1)[0]
+            location = location.strip()
             try:
                 days_ago = div.find("span", attrs={"class":"LL4CDc"}).find("span").text
             except:
@@ -79,6 +83,7 @@ class Scraper():
         domain = "https://www.glassdoor.ca"
         for div1 in self.soup.find_all(name="li", attrs={"class":"react-job-listing"}):
             company = div1.find("div", attrs={"class":"job-search-1bgdn7m"}).text
+            company = company[:-5] # remove rating
             title = div1.find("div", attrs={"class":"job-title mt-xsm"}).text
             location = div1.find("div", attrs={"class":"location mt-xxsm"}).text
             url = div1.find("a", attrs={"class":"d-flex justify-content-between p-std jobCard"}).get('href')
