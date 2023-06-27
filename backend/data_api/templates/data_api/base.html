@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Base title(replace){% endblock %}</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- this is a page for a data dashboard about job applications -->
+    <nav>
+      <ul></ul>
+    </nav>
+    {% block content %} Base content(replace) {% endblock %}
+  </body>
+</html>

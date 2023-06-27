@@ -1,0 +1,42 @@
+{% extends "data_api/base.html" %} {% block title %} Landing Page{% endblock %}
+{% block content %}
+<h1>Landing Page</h1>
+
+<div class="chart">
+  <p>Total Job scraped and applied: {{total_jobs}}</p>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <div style="height: 300px">
+    <canvas id="myChart"></canvas>
+  </div>
+  <script>
+    const ctx = document.getElementById("myChart");
+    var total_jobs = "{{ total_jobs }}";
+    var job_applied = "{{ jobs_applied }}";
+    var jobs_not_applied = "{{ jobs_not_applied }}";
+    new Chart(ctx, {
+      type: "pie",
+      data: {
+        labels: ["Total Scraped", "Total Applied", "Total Not Applied"],
+        datasets: [
+          {
+            label: "# of Votes",
+            // data: [{ total_jobs }, { job_applied }, { jobs_not_applied }],
+            data: [total_jobs, job_applied, jobs_not_applied],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  </script>
+</div>
+{% endblock %}

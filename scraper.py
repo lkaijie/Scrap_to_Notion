@@ -20,6 +20,9 @@ class Scraper():
         pass
         
     def get_indeed(self, url: str, filters: dict):
+        
+        
+        
         self.get_soup_indeed(url)
         job_list = []
         for div in self.soup.find_all(name="div", attrs={"class":"job_seen_beacon"}):

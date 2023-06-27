@@ -20,6 +20,7 @@ def get_pages():
     
     payload = {"page_size": 200}
     res = requests.post(url, headers=headers, json=payload)
+    # print(res.json())
     
     data=res.json()['results']
     # print(data)
@@ -67,9 +68,9 @@ def get_primary_keys()-> list:
 def main():
     # get all pages
     # get_pages()
-    title_company_location = get_primary_keys()
+    # title_company_location = get_primary_keys()
     # print("HERE IS THE LIST OF ENTRIES CHECK FOR DUPLICATES HERE:")
-    print(title_company_location)
+    # print(title_company_location)
     # # print(title_company_location)
     # print("------------------")
     # # create a sample page
@@ -101,6 +102,29 @@ def main():
     # company = "updated company"
     # updated_data = {"Title": {"rich_text": [{"text": {"content": title}}]},"Company": {"rich_text": [{"text": {"content": company}}]}}
     # update_page(id, updated_data)
+    
+    
+    # print("creating page")
+    # date_scraped = datetime.now(timezone.utc).astimezone().isoformat()
+    # platform = "Indeed"
+    # company = "Indeed"
+    # location = "Remote"
+    # title = "Software Engineerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+    # data = {
+    #         "Date Posted":{ "date": {"start": date_scraped}},
+    #         "Date Scraped":{ "date": {"start": date_scraped}},
+    #         "URL": {"url": url},
+    #         "Platform": {"rich_text": [{"text": {"content": platform}}]},
+    #         "Company": {"rich_text": [{"text": {"content": company}}]},
+    #         "Location": {"rich_text": [{"text": {"content": location}}]},
+    #         "Title": {"title": [{"text": {"content": title}}]},
+    #     }
+    # create_page(data)
+    
+    
+    with open('notiondb1.json', 'r', encoding='utf8') as f:
+        data = json.load(f)
+        print(data[1])
     
 if __name__ == "__main__":
     main()
