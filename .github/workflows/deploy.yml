@@ -4,8 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches:
-      - main
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,24 +33,23 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
+          cache: 'npm'
       - name: Install dependencies
         run: |
-          cd react-frontend
-          npm ci
+            cd react-frontend
+            npm install
       - name: Build
         run: |
-          cd react-frontend
-          npm run build
+            cd react-frontend
+            npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: Build
-          path: react-frontend/build
+          # Upload dist repository
+          path: './dist'
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: react-frontend/build
+        id: deployment
+        uses: actions/deploy-pages@v1
