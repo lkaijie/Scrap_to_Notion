@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.charts-container{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  margin: 30px
+}
+

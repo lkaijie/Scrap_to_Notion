@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Progress from "./pages/Progress";
 import Analytics from "./pages/Analytics";
+import Modal from "./components/Modal";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,10 +16,12 @@ function App() {
     <>
       {/* <SideNav /> */}
       {/* <SideBar /> */}
-      <div className="flex h-screen">
+      <div className="flex">
         <SideBar1 />
         {/* <Home /> */}
         <div className="w-full dark:bg-[#121212] dark:text-white dark:text-opacity-[0.87]">
+          {/* <Modal /> */}
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/progress" element={<Progress />} />
@@ -26,7 +29,7 @@ function App() {
             <Route
               path="*"
               element={
-                <h1 className="flex justify-center">
+                <h1 className="flex justify-center h-screen">
                   Not Found/Not implemented
                 </h1>
               }

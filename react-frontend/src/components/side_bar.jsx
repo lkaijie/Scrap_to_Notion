@@ -41,7 +41,7 @@ export default function SideBar1() {
           className={` ${
             open ? "w-60" : "w-20 "
             //   } bg-gray-50 dark:bg-gray-800 h-screen p-5  pt-8 relative duration-300`}
-          } bg-gray-800 h-screen p-5  pt-8 relative duration-300`}
+          } bg-gray-800 p-5  pt-8 relative duration-300`}
         >
           <img
             src="./src/assets/control.png"

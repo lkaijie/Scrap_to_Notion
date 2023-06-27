@@ -3,6 +3,8 @@ import viteLogo from "../assets/vite.svg";
 import { faker } from "@faker-js/faker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarChart, faCalendar } from "@fortawesome/free-regular-svg-icons";
+import { useEffect, useRef } from "react";
+import Modal from "../components/Modal";
 
 import React from "react";
 import {
@@ -46,7 +48,7 @@ export default function Home() {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     plugins: {
       legend: {
         position: "top",
@@ -59,6 +61,8 @@ export default function Home() {
   };
 
   const option_scatter = {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true,
@@ -142,25 +146,57 @@ export default function Home() {
       },
     ],
   };
+  const barChartRef = useRef(null);
+  const lineChartRef = useRef(null);
 
+  //   useEffect(() => {
+  //     function handleResize() {
+  //       // Resize the charts when the screen is resized
+  //       if (barChartRef.current) {
+  //         barChartRef.current.resize();
+  //       }
+  //       if (lineChartRef.current) {
+  //         lineChartRef.current.resize();
+  //       }
+  //     }
+  //     window.addEventListener("resize", handleResize);
+
+  //     // Cleanup function to remove the event listener
+  //     return () => {
+  //       window.removeEventListener("resize", handleResize);
+  //     };
+  //   }, []); // Empty dependency array to ensure the effect runs only once
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+
+    // Set a new timeout to refresh the page after resizing is completed
+    resizeTimeout = setTimeout(() => {
+      window.location.reload();
+    }, 200);
+  });
   return (
     <>
-      <div className="flex flex-col min-h-screen py-2 p-6">
+      <div className="flex flex-col min-h-screen py-2 p-6 justify-end">
         {/* <Test /> */}
-        <div className="flex flex-row built-with justify-center items-baseline mb-10 mt-2">
-          Built with
-          <img
-            src={reactLogo}
-            className="h-full pointer-events-none App-logo"
-            alt="logo"
-          />
-          +
-          <img
-            src={viteLogo}
-            className="h-full pointer-events-none App-logo"
-            alt="logo"
-          />
+        <div className="flex flex-col justify-center items-center mb-10 mt-2 flex-grow">
+          <p className="flex flex-row ">
+            Built with
+            <img
+              src={reactLogo}
+              className="h-full pointer-events-none App-logo mx-5"
+              alt="logo"
+            />
+            +
+            <img
+              src={viteLogo}
+              className="h-full pointer-events-none App-logo mx-5"
+              alt="logo"
+            />
+          </p>
+          <p>test</p>
         </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
           <Home_Card
             percentage={"5%"}
@@ -187,7 +223,34 @@ export default function Home() {
             icon={faCalendar}
           />
         </div>
-        <div className="data-containers flex flex-row justify-between items-center mx-10 my-5">
+        <Modal />
+
+        <div className="charts-container grid gap-5 xl:grid-cols-chart-big 2xl:gap-9">
+          <div className="chart-container p-10 border bg-white shadow-lg">
+            <Bar options={options} data={data} id="bar" ref={barChartRef} />
+          </div>
+          <div className="chart-container p-10 border bg-white shadow-lg">
+            <Line
+              options={option_scatter}
+              data={data_line}
+              id="line"
+              ref={lineChartRef}
+            />
+          </div>
+          {/* <div className="chart-container p-10 border bg-white shadow-lg">
+            <Pie data={data_pie} options={options} />
+          </div> */}
+        </div>
+
+        {/* <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+          <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
+            <Bar options={options} data={data} />
+          </div>
+          <div className="rounded-sm border border-stroke bg-white py-6 px-7.5 shadow-lg dark:border-strokedark dark:bg-gray-800">
+            <Line options={option_scatter} data={data_line} />
+          </div>
+        </div> */}
+        {/* <div className="data-containers flex flex-row justify-between items-center mx-10 my-5">
           <div className="chart-container bg-blue-50 border rounded-full p-10 h-96 w-96">
             <Bar options={options} data={data} />
           </div>
@@ -203,7 +266,7 @@ export default function Home() {
               className="w-[70%] h-[70%]"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
