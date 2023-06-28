@@ -36,9 +36,13 @@ jobs:
           node-version: 18
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd react-frontend
+          npm install
       - name: Build
-        run: npm run build
+        run: |
+          cd react-frontend
+          npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
