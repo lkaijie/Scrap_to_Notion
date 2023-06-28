@@ -149,23 +149,6 @@ export default function Home() {
   const barChartRef = useRef(null);
   const lineChartRef = useRef(null);
 
-  //   useEffect(() => {
-  //     function handleResize() {
-  //       // Resize the charts when the screen is resized
-  //       if (barChartRef.current) {
-  //         barChartRef.current.resize();
-  //       }
-  //       if (lineChartRef.current) {
-  //         lineChartRef.current.resize();
-  //       }
-  //     }
-  //     window.addEventListener("resize", handleResize);
-
-  //     // Cleanup function to remove the event listener
-  //     return () => {
-  //       window.removeEventListener("resize", handleResize);
-  //     };
-  //   }, []); // Empty dependency array to ensure the effect runs only once
   let resizeTimeout;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
@@ -179,8 +162,8 @@ export default function Home() {
     <>
       <div className="flex flex-col min-h-screen py-2 p-6 justify-end">
         {/* <Test /> */}
-        <div className="flex flex-col justify-center items-center mb-10 mt-2 flex-grow">
-          <p className="flex flex-row ">
+        <div className="flex flex-col justify-center items-center mb-10 mt-2 flex-grow rounded-sm border bg-white shadow-lg dark:bg-[#24303F]">
+          <p className="flex flex-row mb-10 text-2xl">
             Built with
             <img
               src={reactLogo}
@@ -194,32 +177,44 @@ export default function Home() {
               alt="logo"
             />
           </p>
-          <p>test</p>
+          <p>
+            Checkout the repo at{" "}
+            <span>
+              <a
+                href="https://github.com/lkaijie/Scrap_to_Notion"
+                target="_blank"
+                className="text-blue-500 "
+              >
+                https://github.com/lkaijie/Scrap_to_Notion
+              </a>
+            </span>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
+          {/* ← ↑ → ↓ ↚ ↛ ↜ ↝ ↞ ↟ */}
           <Home_Card
-            percentage={"5%"}
+            percentage={"↑ 5%"}
             title={"Jobs Scraped"}
             amount={50}
             icon={faBarChart}
           />
           <Home_Card
-            percentage={"5%"}
-            title={"Jobs Scraped"}
-            amount={50}
+            percentage={"↑ 10%"}
+            title={"Jobs Applied"}
+            amount={23}
             icon={faBarChart}
           />
           <Home_Card
-            percentage={"5%"}
-            title={"Jobs Scraped"}
-            amount={50}
+            percentage={"↓ 5%"}
+            title={"Responses"}
+            amount={1}
             icon={faBarChart}
           />
           <Home_Card
-            percentage={"5%"}
-            title={"Jobs Scraped"}
-            amount={50}
+            percentage={" "}
+            title={"Longest Streak"}
+            amount={10}
             icon={faCalendar}
           />
         </div>

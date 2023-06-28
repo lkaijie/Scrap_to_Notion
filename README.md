@@ -6,7 +6,8 @@ Automatically scrapes jobs from multiple sites and adds them to a Notion databas
 ![alt text](demos/preview_img_notion.png)
 
 ## Frontend preview
-![image](https://github.com/lkaijie/lkaijie.github.io/assets/94023052/49314362-8c76-4ce9-977e-81912af6913c)
+link: https://lkaijie.github.io/Scrape-To-Notion-Frontend/
+![image](https://github.com/lkaijie/Scrap_to_Notion/assets/94023052/0a05dea1-0c4c-4026-8a6b-06d9aa73d984)
 
 
 

@@ -3,6 +3,13 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
+import control from "../assets/control.png";
+import Chart_fill from "../assets/Chart_fill.png";
+import User from "../assets/User.png";
+import Calendar from "../assets/Calendar.png";
+import Chart from "../assets/Chart.png";
+import Folder from "../assets/Folder.png";
+import Setting from "../assets/Setting.png";
 
 export default function SideBar1() {
   const [open, setOpen] = useState(true);
@@ -10,14 +17,14 @@ export default function SideBar1() {
   const [activeMenu, setActiveMenu] = useState("");
 
   const Menus = [
-    { title: "Dashboard", src: "Chart_fill", path: "/" },
+    { title: "Dashboard", src: Chart_fill, path: "/" },
     // { title: "Inbox", src: "Chat", path: "/progress" },
-    { title: "Accounts", src: "User", gap: true, path: "/accounts" },
-    { title: "Progress", src: "Calendar", path: "/progress" },
+    { title: "Accounts", src: User, gap: true, path: "/accounts" },
+    { title: "Progress", src: Calendar, path: "/progress" },
     // { title: "Search", src: "Search", path: "/search" },
-    { title: "Analytics", src: "Chart", path: "/analytics" },
-    { title: "Files", src: "Folder", gap: true, path: "/files" },
-    { title: "Settings", src: "Setting", path: "/settings" },
+    { title: "Analytics", src: Chart, path: "/analytics" },
+    { title: "Files", src: Folder, gap: true, path: "/files" },
+    { title: "Settings", src: Setting, path: "/settings" },
   ];
 
   const handleMenuClick = (menu) => {
@@ -44,7 +51,8 @@ export default function SideBar1() {
           } bg-gray-800 p-5  pt-8 relative duration-300`}
         >
           <img
-            src="./src/assets/control.png"
+            // src="./src/assets/control.png"
+            src={control}
             className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
        border-2 rounded-full  ${!open && "rotate-180"}`}
             onClick={() => setOpen(!open)}
@@ -85,7 +93,7 @@ export default function SideBar1() {
                   } `}
                   onClick={() => handleMenuClick(Menu.title)}
                 >
-                  <img src={`./src/assets/${Menu.src}.png`} />
+                  <img src={Menu.src} />
                   <span
                     className={`${!open && "hidden"} origin-left duration-200`}
                   >
