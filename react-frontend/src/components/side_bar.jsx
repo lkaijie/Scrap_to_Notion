@@ -13,7 +13,7 @@ import Setting from "../assets/Setting.png";
 
 export default function SideBar1() {
   const [open, setOpen] = useState(true);
-  const [theme, setTheme] = useState("dark"); // ["light", "dark"
+  const [theme, setTheme] = useState("light"); // ["light", "dark"
   const [activeMenu, setActiveMenu] = useState("");
 
   const Menus = [

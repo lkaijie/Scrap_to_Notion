@@ -23,6 +23,7 @@ function App() {
           {/* <Modal /> */}
 
           <Routes>
+            <Route path="/Scrap_to_Notion" element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/progress" element={<Progress />} />
             <Route path="/analytics" element={<Analytics />} />
